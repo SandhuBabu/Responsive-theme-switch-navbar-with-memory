@@ -1,0 +1,664 @@
+:root {
+    --bg-container: #fff;
+    --nav-col: #162d36;
+    --para-col: #000;
+    --heading-col: #000;
+    --nav-link-col: #fff;
+    --white-opacity: rgba(156, 146, 146, 0.248);
+    --form-inp-border: black;
+    --pop-up-form-bg: #fff;
+    --white-opacity-hover: rgba(255, 255, 255, 0.137);
+    --scroll-thumb-col : rgba(235, 232, 232, 0.351);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--nav-link-col);
+    color: var(--para-col);
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--nav-col);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-col);
+    border-radius: 20px;
+}
+
+.topbar {
+    width: 100%;
+    height: 5em;
+    position: fixed;
+    background-color: var(--nav-col);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar .searchbar {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    background-color: var(--white-opacity);
+}
+
+.topbar #search-box {
+    width: 90%;
+    height: 2.5em;
+    outline: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 0 10px 0 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    color: var(--nav-link-col);
+}
+
+.topbar .searchbar i {
+    width: 10%;
+    color: var(--nav-link-col);
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.topbar .signin-login {
+    width: 5em;
+    position: absolute;
+    right: 5em;
+    color: #fff;
+}
+
+.signin-login button {
+    width: 100%;
+    height: 2.5em;
+    border: none;
+    outline: none;
+    background-color: var(--white-opacity);
+    color: var(--nav-link-col);
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 200ms;
+}
+
+.signin-login button:hover {
+    border: 2px solid var(--nav-link-col);
+    border: none;
+}
+
+
+
+
+.topbar .signin-login {
+    width: 7em;
+    background-color: var(--white-opacity);
+    color: var(--nav-link-col);
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.topbar .signin-login .sign-btn-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.topbar .signin-login:hover {
+    background-color: var(--white-opacity-hover);
+}
+
+.form-close .form-close-label {
+    color: var(--form-inp-border);
+    position: absolute;
+    left: -5px;
+    top: 30px;
+    font-size: 13px;
+    font-style: normal;
+    opacity: 0;
+    transition: all 200ms;
+    user-select: none;
+}
+
+.form-close:hover .form-close-label {
+    opacity: 1;
+}
+
+ .topbar .signin-login input[type='checkbox'] {
+    display: none;
+} 
+
+.sign-in-form {
+    visibility: hidden;
+    cursor: default;
+    width: 20em;
+    height: 26em;
+    background-color: var(--pop-up-form-bg);
+    position: absolute;
+    top: -20em;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: -9px 17px 23px 1px rgba(0,0,0,0.29);
+    transition: top 200ms;
+}
+
+.sign-in-form h2 {
+    text-align: center;
+    margin-top: 1em;
+    color: var(--form-inp-border);
+}
+
+.sign-in-form .form-close {
+    font-size: 30px;
+    position: relative;
+    left: 9em;
+    top: -1em;
+    cursor: pointer;
+    color: var(--form-inp-border);
+}
+
+.sign-in-form form > div {
+    width: 100%;
+    height: 2.5em;
+    margin-top: 2em;
+    padding: 0 1em 0 1em;
+    background-color: transparent;
+}
+
+.sign-in-form form > div label {
+    user-select: none;
+}
+
+.sign-in-form form div > input {
+    width: 100%;
+    height: 90%;
+    border: none;
+    background-color: transparent;
+    color: var(--form-inp-border);
+    border-bottom: 2px solid var(--form-inp-border);
+    outline: none;
+    padding: 0 .5em .5em;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.sign-in-form form div > label {
+    text-transform: uppercase;
+    color: var(--form-inp-border);
+    font-weight: 500;
+    letter-spacing: 1px;
+    user-select: non;
+}
+
+.sign-in-form form div .password-toggler {
+    color: var(--form-inp-border);
+    position: relative;
+    top: -2em;
+    left: 90%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sign-in-form form .btn-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 2em;
+    cursor:default;
+}
+
+.sign-in-form form button {
+    width: 9em;
+    height: 3em;
+    border-radius: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 3px solid var(--form-inp-border);
+    cursor: pointer;
+    color: var(--form-inp-border);
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 50ms;
+}
+
+.sign-in-form form button:hover {
+   background-color: var(--form-inp-border);
+   color: #fff;
+}
+
+#sign-or-log-btn:checked ~ .sign-in-form {
+    visibility: visible;
+    top: 20em;
+}
+
+
+
+
+
+
+.sidebar {
+    width: 15em;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--nav-col);
+    top: 0vh;
+    left: -15em;
+    transition: all 200ms;
+}
+
+.sidebar h2 {
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    color: var(--nav-link-col);
+    align-items: center;
+    left: 2em;
+    user-select: none;
+}
+
+.sidebar table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0;
+
+}
+
+.sidebar table tr:last-child {
+    display: none;
+}
+
+.sidebar table tr {
+    width: 100%;
+    height: 3em;
+    cursor: pointer;
+}
+
+.sidebar table tr td {
+    height: 3em;
+    padding-left: 1em;
+    letter-spacing: 1px;
+    font-family: Tahoma;
+    display: flex;
+    align-items: center;
+    color: var(--nav-link-col);
+    transition: all .5s;
+}
+
+.sidebar table tr td i {
+    font-size: 20px;
+    margin-right: 1em;
+}
+
+.sidebar table tr td span {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.sidebar table td:hover {
+    color: var(--nav-col);
+    background-color: var(--nav-link-col);
+}
+
+#check {
+    display: none;
+}
+
+label #btn,
+label #cancel {
+    z-index: 9;
+    position: fixed;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0px;
+    color: var(--nav-link-col);
+}
+
+label #btn:active,
+label #cancel:active {
+    border: 2px solid var(--nav-link-col);
+}
+
+label #btn {
+    left: .5em;
+    top: .75em;
+    font-size: 30px;
+    padding: 6px 12px;
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -15em;
+    top: 1em;
+    font-size: 30px;
+    padding: 4px 9px;
+}
+
+#check:checked~.sidebar {
+    left: 0;
+    top: 0;
+}
+
+#check:checked~label #btn {
+    visibility: hidden;
+}
+
+#check:checked~label #cancel {
+    top: .75em;
+    left: 6em;
+    transition: all 200ms;
+}
+
+.theme-switch {
+    width: 100%;
+    height: 3em;
+    position: absolute;
+    bottom: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-switch p {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative;
+    left: -10px;
+    text-transform: uppercase;
+    font-family: Tahoma;
+    color: var(--nav-link-col);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+    background-color: #ccc;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 1px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--nav-link-col);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.user {
+    width: 100%;
+    height: 5em;
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--nav-link-col);
+}
+
+.user .profile {
+    width: 80%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(156, 146, 146, 0.248);
+    transition: background-color 100ms;
+}
+
+.user .profile:hover {
+    background-color: var(--white-opacity-hover);
+}
+
+.user .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    position: relative;
+    left: -1em;
+    user-select: none;
+    cursor: pointer;
+}
+
+.user .details .name {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.user .details .job {
+    font-size: 12px;
+    font-weight: 300;
+    cursor: default;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-container);
+    padding: 6em 1em 0 3em;
+}
+
+.container h1 {
+    color: var(--heading-col);
+}
+
+.container .para {
+    margin-top: 2em;
+    color: var(--para-col);
+    line-height: 28px;
+}
+
+
+.message {
+    position: relative;
+    top: 28em;
+    left: 100em;
+    background-color: var(--white-opacity);
+    color: var(--para-col);
+    width: 10em;
+    height: 2em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: message-sent 2s ease-in-out 1;
+}
+
+.message i {
+    margin-right: 10px;
+}
+
+
+
+
+
+.log-in-form-onload {
+    background-color: var(--pop-up-form-bg);
+    width: 50%;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 200ms;
+    display: none;
+    border-radius: 15px;
+    box-shadow: -9px 17px 23px 1px rgba(0,0,0,0.29);
+}
+
+.log-in-form-onload h1 {
+    text-align: center;
+    margin-top: 1em;
+    color: var(--form-inp-border);
+}
+
+.log-in-form-onload #form-onload-close {
+    color: var(--form-inp-border);
+}
+
+.log-in-form-onload .form-sec-onload {
+    width: 100%;
+}
+
+
+.form-sec-onload div {
+    padding:0 1.5em 0 1.5em;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.form-sec-onload div input {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--form-inp-border);
+    font-size: 14px;
+    border-bottom:  1px solid var(--form-inp-border);
+}
+
+.form-sec-onload div label {
+    color: var(--form-inp-border);
+}
+
+.form-sec-onload div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-sec-onload div button {
+    width: 9em;
+    height: 3em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--form-inp-border);
+    background: transparent;
+    border: 1px solid var(--form-inp-border);
+    font-size: 14px;
+}
+
+.form-sec-onload div button:hover {
+    background-color: var(--form-inp-border);
+    color: #fff;
+    transition:  background-color .5s;
+}
+
+#form-onload-close {
+    font-size: 30px;
+    position: relative;
+    left: 90%;
+    top: -10%;
+    cursor: pointer;
+}
+
+
+@keyframes message-sent {
+    0% {
+        left: 100em;
+    }
+    20% {
+        left: 81em;
+    }
+    50% {
+        left: 81em;
+    }
+    100% {
+        left: 100em;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .topbar .signin-login {
+        display: none;
+    }
+
+    .sidebar table tr:last-child {
+        display: block;
+    }
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    label #btn {
+        left: 0em;
+    }
+
+    .topbar .searchbar {
+        width: 80%;
+        position: relative;
+        left: 1em;
+    }
+
+    .topbar #search-box {
+        width: 90%;
+        padding-right: 15px;
+    }
+
+    .topbar .searchbar i {
+        width: 10%;
+        font-size: 20px;
+        position: relative;
+        right: .5em;
+    }
+}
